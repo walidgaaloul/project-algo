@@ -1,0 +1,21 @@
+ALGORITHM somme-diff-hash
+VAR
+ sum,i:INTEGER:=0;
+    const
+    tab1 : ARRAY_OF INTEGER[10]; := [6,55,42,32,52,22,252,25,2,55];
+    tab2 : ARRAY_OF INTEGER[10]; := [8,558,2,34,2,85,252,215,20,66];
+    tab : tab1.concat(tab2);
+    test : BOOLEAN; :=false;
+     htab : HASH_TABLE<INTEGER,INTEGER>;
+BEGIN
+  htab.insert(1,tab[1])
+FOR i FROM 1 TO tab.length-1 STEP 1  DO
+    if (htab.lookup(tab[i]=false)) THEN 
+  { sum:=sum+tab[i];
+    htab.insert(i,tab[i])
+  }
+END_FOR
+   write("la somme des veleurs different=", somme);
+END
+
+END

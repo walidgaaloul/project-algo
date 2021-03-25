@@ -1,0 +1,20 @@
+ALGORITHM algorithm_name
+VAR
+phrase:string:="ma premier phrase";
+i:integer:=0;
+cvoyel:integer:=0;
+cmot:integer:=1;
+BEGIN
+FOR i FROM 0 TO phrase.length  DO
+    IF (phrase[i]:= "a" or phrase[i]:="e" or phrase[i]:="i" or phrase[i]:="o" or phrase[i]:="u") THEN
+        cvoyel:=cvoyel+1;
+    ELSE_IF (phrase[i]='' THEN
+        cmot=cmot+1;
+    
+    END_IF
+END_FOR
+write("la longeure de la phrase est",phrase.length );
+write("le nombre de voyelle existante dans la phrase est",cvoyel );
+write("le nombre de mot existante dans la phrase est",cmot );
+
+END

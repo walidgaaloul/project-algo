@@ -1,0 +1,28 @@
+ALGORITHM somme_diff
+VAR
+    sum,i,j:INTEGER:=0;
+    const
+    tab1 : ARRAY_OF INTEGER[10]; := [6,55,42,32,52,22,252,25,2,55];
+    tab2 : ARRAY_OF INTEGER[10]; := [8,558,2,34,2,85,252,215,20,66];
+    tab : tab1.concat(tab2);
+    test : BOOLEAN; :=false;
+BEGIN
+   tab_concat:=concat(tab1 , tab2);
+
+ FOR i FROM 0 TO length(tab)-1 STEP 1  DO
+    test=true
+       FOR j FROM 0 TO length(tab)-1 STEP 1  DO
+           IF (tab[i]= tab[j]) THEN
+               test=false;
+           END_IF
+       END_FOR
+       IF (test) THEN
+           sum:=sum+tab[i];
+       END_IF
+   END_FOR
+    
+   write("la somme des veleurs different=", sum);
+ 
+END
+
+
