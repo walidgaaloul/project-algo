@@ -1,0 +1,25 @@
+
+PROCEDURE Dotproduct(var v1 ARRAY_OF INTEGER[50], v2 ARRAY_OF INTEGER[50]))
+VAR
+      ps:INTEGER;
+    i:INTEGER;
+BEGIN
+  ps:=0;
+     FOR i FROM 0 TO v1.length STEP step  DO
+        ps=ps+ v1[i] * v2[i];
+    END_FOR
+    write(ps)
+END
+ALGORITHM algorithm_procedure_vecteur
+VAR
+ i,j:INTEGER;
+ vectors:ARRAY_OF INTEGER[50]:=[[7, 5, 1],[2, 0, 2], [9, 3, 0], [5, 1, 2], [2, 3 ,8], [0, 0, 0]];
+BEGIN
+    FOR i FROM 0 TO vectors.length STEP step  DO
+        FOR j FROM i+1 TO  vectors.length step  DO
+            IF (Dotproduct(vectors[i],vectors[j]=0)) THEN
+                write(vectors[i],"and",vectors[j],"are orthogonal")
+            END_IF
+        END_FOR
+    END_FOR
+END
